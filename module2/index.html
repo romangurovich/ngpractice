@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<link href="app.css" rel="stylesheet" />
+		<title>Shopping List</title>
+	</head>
+	<body ng-app="ShoppingListCheckOff" ng-cloak>
+		<div ng-controller="ToBuyController as toBuy">
+			<ul>
+				<li ng-if="!toBuy.items.length">Everything is bought!</li>
+				<li ng-repeat="item in toBuy.items">
+					{{ toBuy.display(item, $index + 1) }}
+					<button ng-click="toBuy.buyItem(item)">Bought</button>
+				</li>
+			</ul>
+		</div>
+		<div ng-controller="AlreadyBoughtController as alreadyBought">
+			<ul>
+				<li ng-if="!alreadyBought.items.length">Nothing bought yet</li>
+				<li ng-repeat="item in alreadyBought.items">
+					{{ alreadyBought.display(item, $index + 1) }}
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="../vendor/angular.min.js"></script>
+	<script src="../vendor/lodash.min.js"></script>
+	<script src="services/shopping_list_check_off_service.js"></script>
+	<script src="controllers/to_buy_controller.js"></script>
+	<script src="controllers/already_bought_controller.js"></script>
+</html>
+

@@ -1,0 +1,10 @@
+<ul>
+  <li ng-if="!vm.items.length && vm.query && vm.searchesCount > 0">
+    <span class="info">Nothing found</span>
+  </li>
+  <li ng-repeat="item in vm.items">
+    <span ng-bind="item.name"></span>
+    <button ng-click="vm.dropItem({index: $index});">Don't want!</button>
+    <div ng-bind="item.description"></div>
+  </li>
+</ul> 

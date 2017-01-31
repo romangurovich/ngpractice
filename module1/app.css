@@ -1,0 +1,13 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.happy {
+	border: 1px green solid;
+	color: green;
+}
+
+.unhappy {
+	border: 1px red solid;
+	color: red;
+}

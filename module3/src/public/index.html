@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular App</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+</head>
+<body ng-app="NarrowItDownApp" ng-cloak>
+  <main ng-controller="NarrowItDownController as vm">
+    <h1 class="title">Shopping List</h1>
+    <input type="text" ng-model="vm.query" ng-keydown="$event.which === 13 && vm.loadItems()" />
+    <button ng-click="vm.loadItems()">Narrow It Down For Me!</button>
+    <found-items
+      items="vm.items"
+      query="vm.query"
+      searches-count="vm.searchesCount"
+      drop-item="vm.dropItem(index)">
+    </found-items>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="app.css" rel="stylesheet"/>
+		<title>Lunch Check</title>
+	</head>
+	<body ng-app="LunchCheck" ng-cloak>
+		<h1>Check Your Lunch</h1>
+		<div ng-controller="LunchCheckController">
+			<label for="foods">What did you eat?</label>
+			<input name="foods" type="text" ng-model="foods" />
+			<button ng-click="generateMessage()">Check</button>
+			<div ng-class="status">{{message}}</div>
+		</div>
+	</body>
+	<script src="../vendor/angular.min.js"></script>
+	<script src="../vendor/lodash.min.js"></script>
+	<script src="app.js"></script>
+</html>
