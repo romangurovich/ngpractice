@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "module3/package.json"
+      ]
+    }
+  }
+}
